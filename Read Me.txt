@@ -1,0 +1,16 @@
+1) Before sourcing run_analysis.R, please make sure that you working directory contains samsung data folder named "UCI HAR Dataset"
+2) Source run_analysis
+3) The code first sources the packages that will be used. Please ensure you have dplyr and plyr packages installed (Row 1 -3 of code)
+4) Then the code reads in all the files to be used in train, test and main directory. For easy recognition of variables in codes all variables are named exacttly the same as the source files that contain that table.(Row 5-17 of code)
+5)Variable names from feature.txt are used to name the 561 columns in X_test and X_train (Row 19 -21 of code)
+6) Activity descriptions are extracted from activity_label.txt and added to y_test and y_train usin join function of plyr package as simple merge results in reordering (Row 23-27 of code)
+) Variable name of subject is given to subject ids extracted from subject_test and subject_train (Row 29-31 of code)
+7) Subject ids from subject_test.txt and subject_train.txt are mutated into X_test and X_train (Row 33-35 of code)
+8) Activity descriptions are mutated into X_test and X_train (Row 37-39 of code)
+9) X_test and X_train are reordered to bring subjects and activity description in the beginning of tables (Row 41-43 of code)
+10) Columns containing "mean" and "std" are selected using 'contains' feaeture in select function of dplyr (Row 45-46 of code)
+11) Required summary in point number 5 of project problem statement is generated using group_by and summarise_each functions (Row 48-50 of code)
+12) Summarized table is written into a text file in working directory named "X_average.txt" (Row number 52-53 of code)
+13) The output displays
+	a) X_combined which is the merged table for all observations of train and test
+	b) C_average which is the average of all variable with mean or standard deviations
